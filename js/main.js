@@ -3,8 +3,15 @@
 // Ci saranno quindi 10 caselle per ognuna delle 10 righe.
 // Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro ed emetto un messaggio in console con il numero della cella cliccata.
 
-
+let button = document.getElementById("play");
 const contenitore = document.querySelector(".container");
+
+button.addEventListener("click",
+    function(){
+        contenitore.classList.add("active");
+    }
+)
+
 for (let i = 1; i <= 100; i++){
     const element = document.createElement('div');
     element.classList.add("box");
@@ -19,3 +26,4 @@ for (let i = 1; i <= 100; i++){
         
     );
 }
+
