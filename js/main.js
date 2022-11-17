@@ -8,22 +8,25 @@ const contenitore = document.querySelector(".container");
 
 button.addEventListener("click",
     function(){
+        contenitore.innerHTML = '';
+        console.clear();
         contenitore.classList.add("active");
+    
+
+        for (let i = 1; i <= 100; i++){
+            const element = document.createElement('div');
+            element.classList.add("box");
+            contenitore.append(element);
+            element.append(i);
+
+            element.addEventListener("click",
+                function(){
+                    element.classList.toggle("clicked");
+                    console.log(i);
+                }
+                
+            );
+        };
     }
 )
-
-for (let i = 1; i <= 100; i++){
-    const element = document.createElement('div');
-    element.classList.add("box");
-    contenitore.append(element);
-    element.append(i);
-
-    element.addEventListener("click",
-        function(){
-            element.classList.toggle("clicked");
-            console.log(i);
-        }
-        
-    );
-}
 
